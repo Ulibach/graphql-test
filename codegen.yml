@@ -1,0 +1,15 @@
+overwrite: true
+schema: 
+- "http://152.228.215.94:81/api":
+    headers:
+      Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xNTIuMjI4LjIxNS45NDo4MVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2NTMxMjY4MjksImV4cCI6MTY1NTcxODgyOSwibmJmIjoxNjUzMTI2ODI5LCJqdGkiOiJPN1ZuNlYxcWwxMHJ6Y2YzIiwic3ViIjoyLCJwcnYiOiJjYjc4YjVlMWZmY2UwZjgzMWQwMjMxZGYyYzhiZDdjODA2NDc3NzYyIn0.m_JlE4ymnWQzSDYNLTXJFuzsKVVphgLb8zdokumy52w
+documents: "src/**/*.graphql"
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
